@@ -20,6 +20,9 @@
         "ext-mbstring": "*",
         "ext-simplexml": "*",
         "dormilich/http-oauth": "dev-main",
+        "psr/http-client-implementation": "^1.0",
+        "psr/http-factory-implementation": "^1.0",
+        "psr/simple-cache-implementation": "^1.0",
         "symfony/config": "^5.0",
         "symfony/dependency-injection": "^5.0",
         "symfony/http-kernel": "^5.0"
@@ -36,6 +39,5 @@
     "scripts": {
         "test": "phpunit"
     },
-    "prefer-stable": true,
-    "minimum-stability": "dev"
+    "prefer-stable": true
 }
