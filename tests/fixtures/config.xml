@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xmlns:dormilich-http-oauth="http://example.org/schema/dic/dormilich_http_oauth"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services
+               https://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <dormilich-http-oauth:config>
+        <dormilich-http-oauth:credentials>
+            <dormilich-http-oauth:default>
+                <dormilich-http-oauth:client>test</dormilich-http-oauth:client>
+                <dormilich-http-oauth:secret>8582992d-ddd8-4a9d-be4b-60b39e487b62</dormilich-http-oauth:secret>
+                <dormilich-http-oauth:server>https://example.com/oauth/token</dormilich-http-oauth:server>
+            </dormilich-http-oauth:default>
+            <dormilich-http-oauth:domain>
+                <dormilich-http-oauth:client>test</dormilich-http-oauth:client>
+                <dormilich-http-oauth:secret>8582992d-ddd8-4a9d-be4b-60b39e487b62</dormilich-http-oauth:secret>
+                <dormilich-http-oauth:server>https://example.com/oauth/token</dormilich-http-oauth:server>
+                <dormilich-http-oauth:host>example.org</dormilich-http-oauth:host>
+            </dormilich-http-oauth:domain>
+        </dormilich-http-oauth:credentials>
+    </dormilich-http-oauth:config>
+
+</container>

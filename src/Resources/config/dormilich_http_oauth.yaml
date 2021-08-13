@@ -1,0 +1,13 @@
+dormilich_http_oauth:
+  credentials:
+    default:
+      client: '%env(CLIENT_ID)%'
+      secret: '%env(CLIENT_SECRET)%'
+      server: https://example.com/oauth/token
+    domains:
+      - client: '%env(CLIENT_ID)%'
+        secret: '%env(CLIENT_SECRET)%'
+        server: https://example.com/oauth/token
+        host:
+          - example.org
+
