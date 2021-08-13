@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+    <services>
+        <defaults public="false"/>
+
+        <!--
+            service tags:
+                - dormilich_http_oauth.credentials      Credentials providers to add
+          -->
+
+        <service id="dormilich_http_oauth.encoder" class="Dormilich\HttpOauth\Encoder\AuthorisationEncoder">
+            <argument type="service" id="Dormilich\HttpOauth\TokenProviderInterface"/>
+            <tag name="dormilich_http_client.client_encoder"/>
+        </service>
+
+        <service id="dormilich_http_oauth.token_provider" class="Dormilich\HttpOauth\TokenProvider">
+            <argument type="service" id="Dormilich\HttpOauth\TokenClientInterface"/>
+            <argument type="service" id="Psr\SimpleCache\CacheInterface"/>
+        </service>
+
+        <service id="dormilich_http_oauth.token_client" class="Dormilich\HttpOauth\TokenClient">
+            <argument type="service" id="Dormilich\HttpOauth\Credentials\CredentialsProviderInterface"/>
+            <argument type="service" id="Psr\Http\Client\ClientInterface"/>
+            <argument type="service" id="Psr\Http\Message\RequestFactoryInterface"/>
+            <argument type="service" id="Psr\Http\Message\StreamFactoryInterface"/>
+        </service>
+
+        <service id="dormilich_http_oauth.credentials_chain" class="Dormilich\HttpOauth\Credentials\ChainProvider"/>
+        <service id="dormilich_http_oauth.credentials_default" class="Dormilich\HttpOauth\Credentials\DefaultProvider"/>
+        <service id="dormilich_http_oauth.credentials_domain" class="Dormilich\HttpOauth\Credentials\DomainProvider"/>
+
+        <service id="Dormilich\HttpOauth\Encoder\AuthorisationEncoder" alias="dormilich_http_oauth.encoder"/>
+
+        <service id="Dormilich\HttpOauth\TokenProviderInterface" alias="dormilich_http_oauth.token_provider"/>
+        <service id="Dormilich\HttpOauth\TokenClientInterface" alias="dormilich_http_oauth.token_client"/>
+        <service id="Dormilich\HttpOauth\Credentials\CredentialsProviderInterface" alias="dormilich_http_oauth.credentials_chain"/>
+
+    </services>
+</container>
