@@ -3,7 +3,9 @@
            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
            xmlns:dormilich-http-oauth="http://example.org/schema/dic/dormilich_http_oauth"
            xsi:schemaLocation="http://symfony.com/schema/dic/services
-               https://symfony.com/schema/dic/services/services-1.0.xsd">
+               https://symfony.com/schema/dic/services/services-1.0.xsd
+               http://example.org/schema/dic/dormilich_http_oauth
+               https://github.com/Dormilich/http-oauth-bundle/raw/main/src/Resources/config/schema/http-oauth-1.0.xsd">
 
     <dormilich-http-oauth:config>
         <dormilich-http-oauth:credentials>
